@@ -3,18 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open Google on GitHub URL Click</title>
+<title>Redirect to Google on GitHub URL Click</title>
 <script>
-function openGoogle(event) {
-    event.preventDefault(); // Prevent default link behavior
-    window.open('https://www.google.com', '_blank'); // Open Google in a new tab/window
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Find all <a> elements with href pointing to GitHub
+    var githubLinks = document.querySelectorAll("a[href='https://github.com']");
+    
+    // Attach click event listener to each GitHub link
+    githubLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            window.location.href = "https://www.google.com"; // Redirect to Google
+        });
+    });
+});
 </script>
 </head>
 <body>
 
-<!-- Anchor tag with an onclick event -->
-<a href="https://github.com" onclick="openGoogle(event);">Click here to open Google</a>
+<!-- Example GitHub link -->
+<a href="https://github.com">Click here to redirect to Google</a>
 
 </body>
 </html>
+
