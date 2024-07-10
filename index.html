@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Google on GitHub URL Click</title>
+<script>
+function openGoogle(event) {
+    event.preventDefault(); // Prevent default link behavior
+    window.open('https://www.google.com', '_blank'); // Open Google in a new tab/window
+}
+</script>
+</head>
+<body>
+
+<!-- Anchor tag with an onclick event -->
+<a href="https://github.com" onclick="openGoogle(event);">Click here to open Google</a>
+
+</body>
+</html>
